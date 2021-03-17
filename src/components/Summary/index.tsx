@@ -18,13 +18,26 @@ export const Summary = () => {
 
   const summary = transactions.reduce(
     (acc, transaction) => {
-      if (transaction.type === "deposit") {
-        acc.deposits += transaction.amount;
-        acc.total += transaction.amount;
-      } else {
-        acc.withdraws += transaction.amount;
-        acc.total -= transaction.amount;
+      switch (transaction.type) {
+        case "deposit":
+          acc.deposits += transaction.amount;
+          acc.total += transaction.amount;
+          break;
+        case "withdraw":
+          acc.withdraws += transaction.amount;
+          acc.total -= transaction.amount;
+          break;
+        default:
+          break;
       }
+
+      // if (transaction.type === "deposit") {
+      //   acc.deposits += transaction.amount;
+      //   acc.total += transaction.amount;
+      // } else {
+      //   acc.withdraws += transaction.amount;
+      //   acc.total -= transaction.amount;
+      // }
       return acc;
     },
     {

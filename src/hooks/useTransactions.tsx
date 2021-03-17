@@ -9,6 +9,7 @@ import { api } from "../services/api";
 
 interface TransactionContextData {
   transactions: Transaction[];
+  isLoading: boolean;
   createTransaction: (transaction: TypeTransactionInput) => Promise<void>;
 }
 
@@ -41,17 +42,30 @@ const TransactionsContext = createContext<TransactionContextData>(
 
 const TransactionsProvider = ({ children }: TransactionsProviderProps) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    api
-      .get("transactions")
-      .then((response) => setTransactions(response.data.transactions));
+    setIsLoading(true);
+    const callApi = async () => {
+      try {
+        const response = await api.get("transactions");
+        setTransactions(response.data.transactions);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        return console.log(error);
+      }
+    };
+    // api
+    //   .get("transactions")
+    //   .then((response) => setTransactions(response.data.transactions));
 
     // api.get("transactions").then((response) => setTransactions(response.data.transations))
 
     //   //Isso aqui e dentro do corpo da function
     //   // const { transactions } = response.data;
     //   // return setTransactions(transactions);
+    callApi();
   }, []);
 
   const createTransaction = async (transactionInput: TypeTransactionInput) => {
@@ -65,7 +79,9 @@ const TransactionsProvider = ({ children }: TransactionsProviderProps) => {
   };
 
   return (
-    <TransactionsContext.Provider value={{ transactions, createTransaction }}>
+    <TransactionsContext.Provider
+      value={{ transactions, createTransaction, isLoading }}
+    >
       {children}
     </TransactionsContext.Provider>
   );
