@@ -30,14 +30,10 @@ rodar a App em [http://localhost:3000](http://localhost:3000)
 
 ## Media
 
-![Watch the video](./GitMedia/video.gif)
-![home](./GitMedia/home.PNG)
-![modal](./GitMedia/modal.PNG)
-![newTransaction](./GitMedia/newTransaction.PNG)
-
-<!-- [![home](./GitMedia/home.PNG)
-[![modal](./GitMedia/modal.PNG)
-[![newTransaction](./GitMedia/newTransaction.PNG) -->
+![Watch the video](./ReadMeImg/video.gif)
+![home](./ReadMeImg/home.PNG)
+![modal](./ReadMeImg/modal.PNG)
+![newTransaction](./ReadMeImg/newTransaction.PNG)
 
 ## Node version
 
