@@ -1,4 +1,4 @@
-# Modulo 2 Semana 2 - Ignite Trilha ReactJS
+# Modulo 1 Semana 2 - Ignite Trilha ReactJS
 
 _pt-br_
 
@@ -30,11 +30,14 @@ rodar a App em [http://localhost:3000](http://localhost:3000)
 
 ## Media
 
-[![Watch the video](./GitMedia/video.gif)
+![Watch the video](./GitMedia/video.gif)
+![home](./GitMedia/home.PNG)
+![modal](./GitMedia/modal.PNG)
+![newTransaction](./GitMedia/newTransaction.PNG)
 
-[![home](./GitMedia/home.PNG)
+<!-- [![home](./GitMedia/home.PNG)
 [![modal](./GitMedia/modal.PNG)
-[![newTransaction](./GitMedia/newTransaction.PNG)
+[![newTransaction](./GitMedia/newTransaction.PNG) -->
 
 ## Node version
 
