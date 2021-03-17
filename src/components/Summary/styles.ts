@@ -1,11 +1,34 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animate = keyframes`
+0%{
+  transform: translateX(-300px);
+  opacity:0;
+}
+25% {
+  opacity:0.2;
+}
+
+50% {
+  opacity:0.5;
+}
+75% {
+  opacity:0.8;
+}
+
+100% {
+  transform: translateX(0px);
+  opacity:1;
+}
+`;
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr); //1fr 1fr 1fr
   gap: 2rem;
 
-  margin-top: -10rem;
+  margin-top: -8rem;
+  animation: ${animate} 0.8s ease-in;
 
   div {
     padding: 1.5rem 2rem;
@@ -13,7 +36,7 @@ export const Container = styled.div`
     border-radius: 0.25rem;
     background: var(--shape);
     color: var(--text-title);
-
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     header {
       display: flex;
       align-items: center;
@@ -28,8 +51,12 @@ export const Container = styled.div`
       line-height: 3rem;
     }
 
-    &.highlight-background {
+    &.highlight-background-green {
       background: var(--green);
+      color: #fff;
+    }
+    &.highlight-background-red {
+      background: var(--red);
       color: #fff;
     }
   }

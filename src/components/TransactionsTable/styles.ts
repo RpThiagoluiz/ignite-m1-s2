@@ -1,4 +1,26 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animate = keyframes`
+0%{
+  transform: translateX(-300px);
+  opacity:0;
+}
+25% {
+  opacity:0.2;
+}
+
+50% {
+  opacity:0.5;
+}
+75% {
+  opacity:0.8;
+}
+
+100% {
+  transform: translateX(0px);
+  opacity:1;
+}
+`;
 
 export const Container = styled.div`
   margin-top: 4rem;
@@ -6,6 +28,10 @@ export const Container = styled.div`
   table {
     width: 100%;
     border-spacing: 0 0.5rem;
+
+    tr {
+      animation: ${animate} 0.5s ease-in;
+    }
 
     th {
       color: var(--text-body);
@@ -29,9 +55,10 @@ export const Container = styled.div`
         color: var(--text-title);
       }
 
-      &.deposite {
+      &.deposit {
         color: var(--green);
       }
+
       &.withdraw {
         color: var(--red);
       }
