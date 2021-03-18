@@ -39,6 +39,6 @@ rodar a App em [http://localhost:3000](http://localhost:3000)
 
 v14.15.4
 
-## Tecnologies
+## Technoleagues
 
 `ReactJS` | `TypeScript` | `Styled-components` | `Git` | `axios` | `mirageJS ✨` | `polished`
